@@ -25,11 +25,16 @@
     <div class="main__div">
       <div class="search__div">
         <input type="search" name="search" placeholder="Search" class='search' onkeypress='searchInputFun(event)' />
-        <select
-          type=""
-          name="filter"
-          placeholder="Filter by author name"
-        ></select>
+        <select class="authors" name="authors">
+          <option value="" selected disabled hidden>Filter by author name</option>
+          <option value="Alen Zerbo">Alen Zerbo</option>
+          <option value="Jules Verne">Jules Verne</option>
+          <option value="Tomas Man">Tomas Man</option>
+          <option value="J. D. Salinger">J. D. Salinger</option>
+          <option value="Agata Christie">Agata Christie</option>
+          <option value="Viktor Igo">Viktor Igo</option>
+          <option value="all">All</option>
+        </select>
       </div>
       <div class="posts__div">
       </div>

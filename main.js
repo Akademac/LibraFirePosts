@@ -95,3 +95,55 @@ let handleClick = (btn) => {
     });
   });
 };
+
+// Filtered Data
+
+let filteredData = {
+  "Alen Zerbo": [],
+  "Jules Verne": [],
+  "Tomas Man": [],
+  "J. D. Salinger": [],
+  "Agata Christie": [],
+  "Viktor Igo": [],
+  all: [],
+};
+
+// Jules Verne, Viktor Igo, Tomas Man, J. D. Salinger, Agata Christie, Alen Zerbo,
+let authors = document.querySelector(".authors");
+let authorSelected = document.querySelector(".authors").options[0];
+
+authors.addEventListener("click", () => {
+  let authorSelected = document.querySelector(".authors").value;
+  if (
+    filteredData["Alen Zerbo"] == 0 &&
+    filteredData["Jules Verne"] == 0 &&
+    filteredData["J. D. Salinger"] == 0 &&
+    filteredData["Agata Christie"] == 0 &&
+    filteredData["Viktor Igo"] == 0 &&
+    filteredData["Tomas Man"] == 0
+  ) {
+    allData.forEach((e) => {
+      filteredData["Alen Zerbo"].push(e.slice(0, 15));
+      filteredData["Jules Verne"].push(e.slice(15, 30));
+      filteredData["J. D. Salinger"].push(e.slice(45, 65));
+      filteredData["Agata Christie"].push(e.slice(65, 82));
+      filteredData["Viktor Igo"].push(e.slice(83, 100));
+      filteredData["Tomas Man"].push(e.slice(30, 45));
+    });
+  }
+
+  if(authorSelected == 'Alen Zerbo') {
+    posts__div.innerHTML = "";
+    filteredData['Alen Zerbo'].forEach(e => {
+      console.log(e);
+      let postDivs = document.createElement("DIV");
+      postDivs.classList.add("post");
+      postDivs.innerHTML = `
+          <h2>${e.title}</h2>
+          <p>${e.body}</p>
+          <button class='read__moreBtn' data-id=${e.id}>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
+      posts__div.appendChild(postDivs);
+      console.log(posts__div);
+    })
+  }
+});
