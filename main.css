@@ -184,6 +184,93 @@ select {
   animation-iteration-count: 2;
 }
 
+/* Posts Page */
+
+.post__divSP {
+  width: 75%;
+  height: auto;
+  margin: 2rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.post__divSP > h1 {
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #2C2C37;
+  padding: 2rem;
+  width: 45rem;
+}
+
+.post__divSP > hr {
+  border: none;
+  border-bottom: 2px solid #F7F7F8;
+  background-color: white;
+  margin: 2rem auto;
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.post__divSP > p {
+  width: 45rem;
+  padding: 2rem;
+  color: #6C6C78;
+  font-size: 1rem;
+}
+
+.post__divSP > hr:last-of-type {
+  margin-top: 2.5rem;
+}
+
+.btns__divSP {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.sp__btns {
+  background-color: white;
+  border: none;
+  opacity: .7;
+  transition: 1s all;
+  font-size: 1rem;
+  margin-left: 10.7rem;
+}
+
+.sp__btns:first-of-type {
+  margin-left: 10.7rem;
+}
+
+.sp__btns:last-of-type {
+  margin-right: 10.7rem;
+}
+
+.sp__btns:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.sp__btns > img {
+  width: 0.7rem;
+  height: 0.6rem;
+  margin-left: 0.3rem;
+}
+
+.btns__divSP .sp__btns:first-of-type > img {
+  transform: rotate(180deg);
+  margin-bottom: -.05rem;
+  margin-right: .2rem;
+}
+
+.sp__btnsActive {
+  opacity: 1;
+}
+  
 /* Key Frames */
 
 @keyframes shake_input {
