@@ -246,7 +246,6 @@ select {
 }
 
 .sp__btns:hover {
-  opacity: 1;
   cursor: pointer;
 }
 
@@ -264,7 +263,6 @@ select {
 
 .sp__btnsActive {
   opacity: 1;
-  color: red;
 }
 
 .author__divSP {
