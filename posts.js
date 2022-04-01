@@ -9,11 +9,12 @@ let postPage__body = document.querySelector(".postPage__body");
   let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${y}`);
   postPage_title.innerHTML = "Loading...";
   let data = await response.json();
-  postsArr.push(data);
-  console.log(data);
+    console.log(data);
+    postsArr.push(data);
+    return fetchedData();
 })();
 
-window.addEventListener("load", () => {
+let fetchedData = () => {
   postPage_title.innerHTML = postsArr[0].title;
   postPage__body.innerHTML = postsArr[0].body;
-});
+}

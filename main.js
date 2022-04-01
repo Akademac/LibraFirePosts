@@ -11,9 +11,10 @@ let searchedData = [];
   header_h1.innerHTML = "Loading...";
   let data = await response.json();
   allData.push(data);
+  return fetchedData();
 })();
 
-window.addEventListener("load", () => {
+let fetchedData = () => {
   header_h1.innerHTML = `Posts found: ${allData.length}`;
   allData.forEach((e) => {
     e.forEach((ee) => {
@@ -34,7 +35,7 @@ window.addEventListener("load", () => {
 
     handleClick(read__moreBtn);
   });
-});
+};
 
 // Search
 
