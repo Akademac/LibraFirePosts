@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="author" content="Goran Djuric" />
+    <meta name="description" content="Test For LibraFire company" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+
+    <!-- Main Css -->
+    <link rel="stylesheet" href="main.css" />
+    <title>LibraFirePosts</title>
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="wrapper">
+      <div class="header">
+        <h1 class="header_h1">Posts found: </h1>
+      </div>
+    </div>
+    <!-- Main Div -->
+    <div class="main__div">
+      <div class="search__div">
+        <input type="search" name="search" placeholder="Search" class='search' onkeypress='searchInputFun(event)' />
+        <select
+          type=""
+          name="filter"
+          placeholder="Filter by author name"
+        ></select>
+      </div>
+      <div class="posts__div">
+      </div>
+    </div>
+
+    <!-- Main JS -->
+
+    <script src="main.js"></script>
+  </body>
+</html>
