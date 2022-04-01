@@ -125,6 +125,7 @@ select {
   margin: 1rem auto;
   grid-gap: 1rem;
   grid-template-columns: repeat(3, 1fr);
+  transition: 2s all;
 }
 
 .post {
@@ -237,7 +238,6 @@ select {
   background-color: white;
   border: none;
   opacity: .7;
-  transition: 1s all;
   font-size: 1rem;
 }
 
@@ -264,6 +264,7 @@ select {
 
 .sp__btnsActive {
   opacity: 1;
+  color: red;
 }
 
 .author__divSP {
