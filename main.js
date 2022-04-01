@@ -6,16 +6,12 @@ let posts__div = document.querySelector(".posts__div");
 let allData = [];
 let searchedData = [];
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-  .then((response) => {
-    return response.json();
-  })
-  .then((data) => {
-    allData.push(data);
-  })
-  .catch((err) => {
-    console.error(err);
-  })
+(async function fetching() {
+  let response = await fetch("https://jsonplaceholder.typicode.com/posts");
+  header_h1.innerHTML = "Loading...";
+  let data = await response.json();
+  allData.push(data);
+})();
 
 window.addEventListener("load", () => {
   header_h1.innerHTML = `Posts found: ${allData.length}`;
@@ -27,7 +23,9 @@ window.addEventListener("load", () => {
       postDivs.innerHTML = `
             <h2>${ee.title}</h2>
             <p>${ee.body.substring(0, 100)}...</p>
-            <button class='read__moreBtn' data-id=${ee.id}>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
+            <button class='read__moreBtn' data-id=${
+              ee.id
+            }>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
       postDivs.classList.add("post");
       posts__div.appendChild(postDivs);
     });
@@ -35,7 +33,6 @@ window.addEventListener("load", () => {
     let read__moreBtn = document.querySelectorAll(".read__moreBtn");
 
     handleClick(read__moreBtn);
-
   });
 });
 
@@ -92,8 +89,8 @@ let searchInputFun = (e) => {
 let handleClick = (btn) => {
   btn.forEach((e) => {
     e.addEventListener("click", (ee) => {
-    let btn_target = ee.target.dataset.id;
-      window.open(`posts.html#${btn_target}`, '_self')
-  });
+      let btn_target = ee.target.dataset.id;
+      window.open(`posts.html#${btn_target}`, "_self");
+    });
   });
 };

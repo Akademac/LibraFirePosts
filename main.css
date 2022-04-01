@@ -228,7 +228,7 @@ select {
 }
 
 .btns__divSP {
-  width: 100%;
+  width: 45rem;
   display: flex;
   justify-content: space-between;
 }
@@ -239,15 +239,10 @@ select {
   opacity: .7;
   transition: 1s all;
   font-size: 1rem;
-  margin-left: 10.7rem;
-}
-
-.sp__btns:first-of-type {
-  margin-left: 10.7rem;
 }
 
 .sp__btns:last-of-type {
-  margin-right: 10.7rem;
+  margin-right: 1rem;
 }
 
 .sp__btns:hover {
@@ -269,6 +264,75 @@ select {
 
 .sp__btnsActive {
   opacity: 1;
+}
+
+.author__divSP {
+  width: 43rem;
+  height: 7.1785rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  background-color: #F7F7F8;
+  margin-top: 4rem;
+  padding: 0rem 3rem;
+}
+
+.author__nameSP {
+  margin-left: 1rem;
+}
+
+.author__divSP p {
+  padding: 0rem;
+  color: #6C6C78;
+  font-size: 1rem;
+  margin-top: .2rem;
+}
+
+.author__divSP h4 {
+  padding: 0rem;
+  margin-top: .3rem;
+  font-size: 1.25rem;
+  color: #2C2C37;
+  font-weight: 600;
+  font-family: "Montserrat", sans-serif;
+}
+
+.comments__divSP {
+  width: 43rem;
+  margin-top: 7rem;
+  align-items: left; 
+}
+
+.comments__divSP > h2 {
+  color: #2C2C37;
+  font-size: 1.875rem;
+  padding: 0rem;
+}
+
+.comments {
+  width: 43rem;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  background-color: #F7F7F8;
+  margin: 2rem auto;
+  padding: 0rem 3rem;
+}
+
+.comments > h3 {
+  margin-top: 1rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+}
+
+
+.comments > p {
+  padding: 0rem;
+  font-size: 1rem;
+  margin: 1rem;
+  margin-left: 0rem;
 }
   
 /* Key Frames */
