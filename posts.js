@@ -4,16 +4,7 @@ let postsArr = [];
 let x = window.location.hash;
 let y = x.substring(1);
 
-window.addEventListener( "pageshow", function ( event ) {
-  var historyTraversal = event.persisted || ( typeof window.performance != "undefined" && window.performance.navigation.type === 2 );
-  if ( historyTraversal ) {
-    // Handle page restore.
-    //alert('refresh');
-    window.location.reload();
-  }
-});
-
-async function fetching(id) {
+async function fetching() {
   let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${y}`);
   postPage_title.innerHTML = "Loading...";
   let data = await response.json();
@@ -38,7 +29,7 @@ let z = parseInt(y);
 
 arrow_right.addEventListener('click', () => {
   console.log(typeof z)
-  if(z <= 100) {
+  if(z <= 99) {
     z++;
     async function fetching(id) {
       let response = await fetch(
@@ -53,8 +44,11 @@ arrow_right.addEventListener('click', () => {
     }
     window.open(`posts.html#${z}`, "_self");
     fetching();
+    arrow_right.classList.add('sp__btnsActive');
+    arrow_left.classList.add('sp__btnsActive');
   }
   else {
+    arrow_left.classList.add('sp__btnsActive');
     arrow_right.classList.remove('sp__btnsActive');
     return false;
   }
@@ -76,7 +70,10 @@ arrow_left.addEventListener("click", () => {
     }
     window.open(`posts.html#${z}`, "_self");
     fetching();
+    arrow_left.classList.add("sp__btnsActive");
+    arrow_right.classList.add("sp__btnsActive");
   } else if (z < 3) {
+    arrow_right.classList.add("sp__btnsActive");
     arrow_left.classList.remove("sp__btnsActive");
   } else {
     return false;
