@@ -54,20 +54,26 @@ button {
   color: var(--darkLetter);
   margin-left: 1rem;
   bottom: 1rem;
+  transition: 1s all;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
 .wrapper {
   width: 100%;
   height: auto;
   margin: 0rem auto;
+  background-color: var(--headerBlue);
 }
 
 /* Header */
 
 .header {
-  background-color: var(--headerBlue);
-  width: 100%;
+  width: 75%;
   height: 15rem;
+  margin: 0rem auto;
   display: flex;
   align-items: center;
 }
@@ -77,15 +83,14 @@ button {
   font-family: "Montserrat", sans-serif;
   line-height: 90px;
   font-size: 3rem;
-  padding-left: 8.5rem;
   font-weight: 400;
 }
 
 /* Main Div */
 
 .main__div {
-  width: 76%;
-  height: 40rem;
+  width: 75%;
+  height: auto;
   margin: 7.187rem auto;
 }
 
@@ -179,7 +184,7 @@ select {
 .shake__input {
   box-shadow: -1px 1px 12px -1px red;
   animation-name: shake_input;
-  animation-duration: .1s;
+  animation-duration: 0.1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-iteration-count: 2;
@@ -202,14 +207,14 @@ select {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   letter-spacing: 0;
-  color: #2C2C37;
+  color: #2c2c37;
   padding: 2rem;
   width: 45rem;
 }
 
 .post__divSP > hr {
   border: none;
-  border-bottom: 2px solid #F7F7F8;
+  border-bottom: 2px solid #f7f7f8;
   background-color: white;
   margin: 2rem auto;
   display: block;
@@ -220,7 +225,7 @@ select {
 .post__divSP > p {
   width: 45rem;
   padding: 2rem;
-  color: #6C6C78;
+  color: #6c6c78;
   font-size: 1rem;
 }
 
@@ -237,7 +242,7 @@ select {
 .sp__btns {
   background-color: white;
   border: none;
-  opacity: .7;
+  opacity: 0.7;
   font-size: 1rem;
 }
 
@@ -257,8 +262,8 @@ select {
 
 .btns__divSP .sp__btns:first-of-type > img {
   transform: rotate(180deg);
-  margin-bottom: -.05rem;
-  margin-right: .2rem;
+  margin-bottom: -0.05rem;
+  margin-right: 0.2rem;
 }
 
 .sp__btnsActive {
@@ -272,7 +277,7 @@ select {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: #F7F7F8;
+  background-color: #f7f7f8;
   margin-top: 4rem;
   padding: 0rem 3rem;
 }
@@ -283,16 +288,16 @@ select {
 
 .author__divSP p {
   padding: 0rem;
-  color: #6C6C78;
+  color: #6c6c78;
   font-size: 1rem;
-  margin-top: .2rem;
+  margin-top: 0.2rem;
 }
 
 .author__divSP h4 {
   padding: 0rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
   font-size: 1.25rem;
-  color: #2C2C37;
+  color: #2c2c37;
   font-weight: 600;
   font-family: "Montserrat", sans-serif;
 }
@@ -300,11 +305,11 @@ select {
 .comments__divSP {
   width: 43rem;
   margin-top: 7rem;
-  align-items: left; 
+  align-items: left;
 }
 
 .comments__divSP > h2 {
-  color: #2C2C37;
+  color: #2c2c37;
   font-size: 1.875rem;
   padding: 0rem;
 }
@@ -315,7 +320,7 @@ select {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: #F7F7F8;
+  background-color: #f7f7f8;
   margin: 2rem auto;
   padding: 0rem 3rem;
 }
@@ -326,14 +331,13 @@ select {
   font-weight: 600;
 }
 
-
 .comments > p {
   padding: 0rem;
   font-size: 1rem;
   margin: 1rem;
   margin-left: 0rem;
 }
-  
+
 /* Key Frames */
 
 @keyframes shake_input {
@@ -342,18 +346,311 @@ select {
   }
 
   25% {
-    transform: translateX(.1rem);
+    transform: translateX(0.1rem);
   }
 
   50% {
-    transform: translateX(-.1rem);
+    transform: translateX(-0.1rem);
   }
 
   75% {
-    transform: translate(.1rem);
+    transform: translate(0.1rem);
   }
 
   100% {
     transform: translateX(0rem);
+  }
+}
+
+/* Media Queris! */
+
+@media screen and (max-width: 900px) {
+  /* Main Div */
+  .posts__div {
+    width: 100%;
+    height: auto;
+    display: grid;
+    margin: 1rem auto;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    transition: 2s all;
+  }
+
+  /* Post Page */
+
+  .post__divSP {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .post__divSP > h1 {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  /* Post Page */
+  .post__divSP > h1 {
+    font-size: 2.5rem;
+    width: 100%;
+  }
+
+  .post__divSP > p {
+    width: 100%;
+  }
+
+  .btns__divSP {
+    width: 100%;
+  }
+
+  .author__divSP {
+    width: 100%;
+    height: 7rem;
+    padding: 0rem 0.5rem;
+  }
+
+  .comments__divSP {
+    width: 100%;
+    margin-top: 5rem;
+  }
+
+  .comments__divSP > h2 {
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+  }
+
+  .comments {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  /* Header */
+
+  .header {
+    justify-content: left;
+    align-items: center;
+  }
+
+  .header > h1 {
+    font-size: 2rem;
+  }
+
+  /* Main Div */
+
+  .main__div {
+    margin: 2rem auto;
+  }
+
+  .search__div {
+    flex-direction: column;
+    height: 5.5rem;
+    justify-content: center;
+    background-color: white;
+  }
+
+  .search__div > input,
+  select {
+    width: 100%;
+    height: 50%;
+    margin: 0.1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* Posts */
+  .posts__div {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* Posts Page */
+  .post__divSP {
+    margin: 1rem auto;
+  }
+
+  .post__divSP > h1 {
+    font-size: 2rem;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .post__divSP > p {
+    padding: 1rem;
+  }
+
+  .post__divSP > hr:last-of-type {
+    margin-top: 1rem;
+  }
+
+  .author__nameSP {
+    margin-left: 0rem;
+  }
+
+  .author__divSP p {
+    font-size: 0.8rem;
+    margin-top: 0.1rem;
+  }
+
+  .author__divSP h4 {
+    margin-top: 0.2rem;
+    font-size: 1rem;
+  }
+
+  .comments {
+    padding: 0rem 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* Posts */
+
+  .post:first-of-type > h2 {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .post:first-of-type > p {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .post > h2 {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+  }
+
+  .post > p {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .btn__left  {
+    margin-left: 0rem;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  /* Post Page */
+  .author__divSP {
+    padding: 0rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* Header */
+  .header {
+    height: 10rem;
+  }
+
+  .header > h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Main Div */
+  .search__div {
+    height: 4rem;
+  }
+
+  /* Posts */
+
+  .post {
+    margin: 1rem auto;
+  }
+
+  .post > h2 {
+    font-size: 1rem;
+    padding: 0.4rem;
+  }
+
+  .post > p {
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 0.7rem;
+  }
+
+  .post:first-of-type > p {
+    font-size: 0.8rem;
+  }
+
+  .post:first-of-type > h2 {
+    font-size: 1.125rem;
+    padding: 0.5rem;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  /* Header */
+  .header {
+    height: 10rem;
+  }
+
+  .header > h1 {
+    font-size: 1.5rem;
+  }
+
+  /* Main Div */
+  .search__div {
+    height: 4rem;
+  }
+
+  /* Posts */
+
+  .post {
+    margin: 1rem auto;
+  }
+
+  /* Post Page */
+
+  .post__divSP > h1 {
+    font-size: 1.5rem;
+  }
+
+  .sp__btns {
+    font-size: .8rem;
+  }
+  
+  .author__divSP p {
+    font-size: .6rem;
+  }
+
+  .author__divSP h4 {
+    font-size: .8rem;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  /* Posts */
+
+  .post:first-of-type > p {
+    margin-top: -0.5rem;
+  }
+
+  .post > p {
+    margin-top: -0.1rem;
+  }
+}
+
+@media screen and (max-width: 280px) {
+  /* Posts */
+
+  .post > p {
+    font-size: 0.5;
+  }
+
+  .post > h2 {
+    font-size: 0.8rem;
+  }
+
+  .post:first-of-type > h2 {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+
+  .post:first-of-type > p {
+    font-size: 0.6rem;
   }
 }

@@ -116,3 +116,6 @@ arrow_left.addEventListener("click", () => {
     return false;
   }
 });
+
+// Browser Back Batton error
+// Comments ???

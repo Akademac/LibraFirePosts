@@ -50,12 +50,15 @@ let searchInputFun = (e) => {
       e.forEach((ee) => {
         if (ee.title == searchInput.value) {
           searchedData.push(ee);
+          header_h1.innerHTML = `Posts found: ${searchedData.length}`;
           searchInput.classList.remove("shake__input");
         } else if (searchInput.value == "") {
           searchInput.classList.add("shake__input");
           noMatches.innerHTML = "Type something!";
+          header_h1.innerHTML = `Posts found: ${searchedData.length}`;
           posts__div.appendChild(noMatches);
         } else if (ee.title !== searchInput.value) {
+          header_h1.innerHTML = `Posts found: ${searchedData.length}`;
           searchInput.classList.remove("shake__input");
           noMatches.innerHTML = `There is no post with title: <b>"${searchInput.value}"</b>  try something else!`;
           posts__div.appendChild(noMatches);
@@ -76,6 +79,7 @@ let searchInputFun = (e) => {
             }>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
         postDivs.classList.add("post");
         posts__div.appendChild(postDivs);
+        header_h1.innerHTML = `Posts found: ${searchedData.length}`;
         searchedData = [];
       }
       let read__moreBtn = document.querySelectorAll(".read__moreBtn");
@@ -85,6 +89,7 @@ let searchInputFun = (e) => {
   } else {
     return false;
   }
+
 };
 
 // Btns new page
@@ -140,6 +145,7 @@ authors.addEventListener("click", () => {
     posts__div.innerHTML = "";
     filteredData[singleAuthor].forEach((e) => {
       e.forEach((ee) => {
+        header_h1.innerHTML = `Posts found: ${e.length}`;
         let postDivs = document.createElement("DIV");
         postDivs.classList.add("post");
         postDivs.innerHTML = `
