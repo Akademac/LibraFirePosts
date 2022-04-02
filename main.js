@@ -71,7 +71,9 @@ let searchInputFun = (e) => {
         postDivs.innerHTML = `
             <h2>${e.title}</h2>
             <p>${e.body.substring(0, 100)}...</p>
-            <button class='read__moreBtn' data-id=${e.id}>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
+            <button class='read__moreBtn' data-id=${
+              e.id
+            }>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
         postDivs.classList.add("post");
         posts__div.appendChild(postDivs);
         searchedData = [];
@@ -107,49 +109,34 @@ let filteredData = {
   "Viktor Igo": [],
   "Ivo Andric": [],
   "Danilo Kish": [],
-  "Branislav Nusic": [], 
+  "Branislav Nusic": [],
   "Borislav Pekic": [],
   "Milos Crnjanski": [],
   all: [],
 };
 
+console.log(filteredData[0]);
+
 let authors = document.querySelector(".authors");
 let authorSelected = document.querySelector(".authors").options[0];
 
+let authorsKeys = Object.keys(filteredData);
+
 authors.addEventListener("click", () => {
   let authorSelected = document.querySelector(".authors").value;
-  if (
-    filteredData["Alen Zerbo"] == 0 &&
-    filteredData["Jules Verne"] == 0 &&
-    filteredData["J. D. Salinger"] == 0 &&
-    filteredData["Agata Christie"] == 0 &&
-    filteredData["Viktor Igo"] == 0 &&
-    filteredData["Tomas Man"] == 0 &&
-    filteredData["Ivo Andric"] == 0 &&
-    filteredData["Danilo Kish"] == 0 &&
-    filteredData["Branislav Nusic"] == 0 &&
-    filteredData["Borislav Pekic"] == 0 
-  ) {
-    allData.forEach((e) => {
-      filteredData["Alen Zerbo"].push(e.filter((e) => e.userId == 1));
-      filteredData["Jules Verne"].push(e.filter((e) => e.userId == 2));
-      filteredData["J. D. Salinger"].push(e.filter((e) => e.userId == 3));
-      filteredData["Agata Christie"].push(e.filter((e) => e.userId == 4));
-      filteredData["Viktor Igo"].push(e.filter((e) => e.userId == 5));
-      filteredData["Tomas Man"].push(e.filter((e) => e.userId == 6));
-      filteredData["Ivo Andric"].push(e.filter((e) => e.userId == 7));
-      filteredData["Danilo Kish"].push(e.filter((e) => e.userId == 8));
-      filteredData["Branislav Nusic"].push(e.filter((e) => e.userId == 9));
-      filteredData["Borislav Pekic"].push(e.filter((e) => e.userId == 10));
-      filteredData.all.push(e);
+
+  allData.forEach((e) => {
+    authorsKeys.forEach((key, index) => {
+      if (filteredData[key] == 0) {
+        filteredData[key].push(e.filter((e) => e.userId == index + 1));
+      }
     });
-  }
+    filteredData.all.push(e);
+  });
 
   let singleAuthor = authorSelected;
-  console.log(singleAuthor);
 
   if (authorSelected == singleAuthor && authorSelected != "") {
-    console.log(singleAuthor);
     posts__div.innerHTML = "";
     filteredData[singleAuthor].forEach((e) => {
       e.forEach((ee) => {
@@ -158,7 +145,9 @@ authors.addEventListener("click", () => {
         postDivs.innerHTML = `
             <h2>${ee.title}</h2>
             <p>${ee.body.substring(0, 100)}...</p>
-            <button class='read__moreBtn' data-id=${ee.id}>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
+            <button class='read__moreBtn' data-id=${
+              ee.id
+            }>Read more <img src="Icons/rigth_arrow.png" alt="Right Arrow"></button>`;
         posts__div.appendChild(postDivs);
       });
       let read__moreBtn = document.querySelectorAll(".read__moreBtn");
