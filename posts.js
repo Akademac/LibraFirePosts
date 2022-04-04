@@ -35,8 +35,12 @@ let authorsAddressArray = [
   "Csongrád, Hungary",
 ];
 
+// Get Data
+
 async function fetching() {
-  let response = await fetch(`https://jsonplaceholder.typicode.com/posts/${locHashSub}`);
+  let response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts/${locHashSub}`
+  );
   postPage_title.innerHTML = "Loading...";
   let data = await response.json();
   postsArr = [];
@@ -117,5 +121,15 @@ arrow_left.addEventListener("click", () => {
   }
 });
 
+let rand_com_num = Math.ceil(Math.random() * 3);
+
+let comments__divSP = document.querySelector(".comments__divSP");
+
+for (let i = 1; i <= rand_com_num; i++) {
+  comments__divSP.innerHTML += `<div class="comments">
+<h3>Lorem ipsum dolo consectetur</h3>
+<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error numquam unde autem porro? Numquam aperiam minima,?</p>
+</div>`;
+}
+
 // Browser Back Batton error
-// Comments ???

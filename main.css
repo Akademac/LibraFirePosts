@@ -59,6 +59,10 @@ button {
 
 button:hover {
   transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  -ms-transform: scale(1.1);
 }
 
 .wrapper {
@@ -187,7 +191,69 @@ select {
   animation-duration: 0.1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-iteration-count: 2;
+  animation-iteration-count: 4;
+}
+
+.pagination__wrapper {
+  width: 15%;
+  height: 2rem;
+  margin: 1rem auto;
+}
+
+.pagination__div {
+  width: 100%;
+  height: 2rem;
+  margin: 0rem auto;
+  position: relative;
+}
+
+.pagination__div > img {
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  opacity: 0.7;
+  transition: 1s all;
+}
+
+.pagination__div > img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.pagination__div > img:first-of-type {
+  left: 0%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+}
+
+.pagination__div > img:last-of-type {
+  right: 0%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+}
+
+.pagination__num {
+  height: 100%;
+  width: 6rem;
+  margin: 0rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pagination__nums {
+  font-family: "Segoe UI";
+  opacity: 0.7;
+  font-size: 0.7rem;
+  cursor: pointer;
 }
 
 /* Posts Page */
@@ -262,6 +328,10 @@ select {
 
 .btns__divSP .sp__btns:first-of-type > img {
   transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   margin-bottom: -0.05rem;
   margin-right: 0.2rem;
 }
@@ -343,22 +413,43 @@ select {
 @keyframes shake_input {
   0% {
     transform: translateX(0rem);
+    -webkit-transform: translateX(0rem);
+    -moz-transform: translateX(0rem);
+    -o-transform: translateX(0rem);
+    -ms-transform: translateX(0rem);
   }
 
   25% {
     transform: translateX(0.1rem);
+    -webkit-transform: translateX(0.1rem);
+    -moz-transform: translateX(0.1rem);
+    -o-transform: translateX(0.1rem);
+    -ms-transform: translateX(0.1rem);
   }
 
   50% {
     transform: translateX(-0.1rem);
+    -webkit-transform: translateX(-0.1rem);
+    -moz-transform: translateX(-0.1rem);
+    -o-transform: translateX(-0.1rem);
+    -ms-transform: translateX(-0.1rem);
   }
 
   75% {
     transform: translate(0.1rem);
+    -webkit-transform: translate(0.1rem);
+    -moz-transform: translate(0.1rem);
+    -o-transform: translate(0.1rem);
+    -ms-transform: translate(0.1rem);
   }
 
   100% {
     transform: translateX(0rem);
+    -webkit-transform: translateX(0rem);
+    -moz-transform: translateX(0rem);
+    -o-transform: translateX(0rem);
+    -ms-transform: translateX(0rem);
+    box-shadow: none;
   }
 }
 
@@ -504,6 +595,8 @@ select {
 }
 
 @media screen and (max-width: 500px) {
+  /* Main Div */
+
   /* Posts */
 
   .post:first-of-type > h2 {
@@ -528,8 +621,12 @@ select {
     font-size: 1rem;
   }
 
-  .btn__left  {
-    margin-left: 0rem;
+  .post > button {
+    margin-left: 0.5rem;
+  }
+
+  .sp__btns:first-of-type {
+    margin-right: 0rem;
   }
 }
 
@@ -610,15 +707,15 @@ select {
   }
 
   .sp__btns {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
-  
+
   .author__divSP p {
-    font-size: .6rem;
+    font-size: 0.6rem;
   }
 
   .author__divSP h4 {
-    font-size: .8rem;
+    font-size: 0.8rem;
   }
 }
 

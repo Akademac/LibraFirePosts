@@ -6,9 +6,16 @@
     <meta name="description" content="Test For LibraFire company" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="img.png" href="Icons/browser_icon.png" />
+
     <!-- Font Awesome -->
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css" integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
+      crossorigin="anonymous"
+    />
 
     <!-- Main Css -->
     <link rel="stylesheet" href="main.css" />
@@ -24,9 +31,17 @@
     <!-- Main Div -->
     <div class="main__div">
       <div class="search__div">
-        <input type="search" name="search" placeholder="Search" class='search' onkeypress='searchInputFun(event)' />
+        <input
+          type="search"
+          name="search"
+          placeholder="Search"
+          class="search"
+          onkeypress="searchInputFun(event)"
+        />
         <select class="authors" name="authors">
-          <option value="" selected disabled hidden>Filter by author name</option>
+          <option value="" selected disabled hidden>
+            Filter by author name
+          </option>
           <option value="Alen Zerbo">Alen Zerbo</option>
           <option value="Jules Verne">Jules Verne</option>
           <option value="Tomas Man">Tomas Man</option>
@@ -40,7 +55,15 @@
           <option value="all">All</option>
         </select>
       </div>
-      <div class="posts__div">
+      <div class="posts__div"></div>
+    </div>
+    <!-- Pagination -->
+
+    <div class="pagination__wrapper">
+      <div class="pagination__div">
+        <img src="Icons/paginationLeftArrow.png" alt="Left Arrow" />
+        <div class="pagination__num"></div>
+        <img src="Icons/paginationRightArrow.png" alt="Right Arrow" />
       </div>
     </div>
 
